@@ -1,4 +1,4 @@
-# vscode-nix-dev-container
+# Nix Devcontainer for VSCode
 A functional devcontainer setup for writing Nix in VSCode
 
 ## What
