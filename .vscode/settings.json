@@ -1,10 +1,8 @@
 {
     "nix.enableLanguageServer": true,
-    // Both nixd and nil work
-    // You need to call the versions inside /root/bin/ to ensure that nix-daemon is also started
-    // Only uncomment one of the below lines
-    // "nix.serverPath": "/root/bin/nil",
-    "nix.serverPath": "/root/bin/nixd",
+    // Both nixd and nil are pre-installed, only uncomment one of the below lines
+    // "nix.serverPath": "nil",
+    "nix.serverPath": "nixd",
     "nix.hiddenLanguageServerErrors": [
         "textDocument/definition",
     ],
