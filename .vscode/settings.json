@@ -1,0 +1,17 @@
+{
+    "nix.enableLanguageServer": true,
+    "nix.serverPath": "/startLSP.sh",
+    "nix.hiddenLanguageServerErrors": [
+        "textDocument/definition",
+    ],
+    "nix.serverSettings": {
+        "nixd": {
+            "formatting": {
+                "command": [
+                    "nixfmt"
+                ]
+            }
+        }
+    },
+    // "editor.formatOnSave": true,
+}
