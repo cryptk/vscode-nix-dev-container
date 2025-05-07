@@ -5,12 +5,14 @@ A functional devcontainer setup for writing Nix in VSCode
 This is a functional devcontainer for developing Nix in VSCode from a system that does not have Nix on it.
 
 It includes the following functionality:
-- Nix IDE as a recommended extension
+- Nix IDE installed inside the container
 - Nixd language server pre-installed in the container
 - A VSCode settings file that has the bare minimum needed to get Nix IDE functional
-  - Pre-configured to use nixfmt for code formatting, but alejandra is available in the container if you prefer it.
-  - Formatting on save is not enabled in the settings.json, so your global preferences should be respected there.  You can uncomment the line in .vscode/settings.json if you want it.
-- A wrapper script to run the nixd LSP that ensures that nix-daemon is running (nixd needs nix-daemon for code completion functionality).
+  - Pre-configured to use nixfmt for code formatting, but alejandra is available in the container if you prefer it
+  - Formatting on save is not enabled in the settings.json, so your global preferences should be respected there.  You can uncomment the line in .vscode/settings.json if you want it
+- A wrapper script to run the nixd LSP that ensures that nix-daemon is running (nixd needs nix-daemon for code completion functionality)
+- The container is the official nixos/nix container so you can open a VSCode Terminal and use all of your familiar nix-env, nix-shell, etc commands
+  - NOTE: The container is NOT NixOS, it is a minimal container with Nix package management.  You can still use this to develop your NixOS configurations, but don't expect tooling like nixos-rebuild and such, it's a container, not a full operating system.
 
 This repo is intentionally kept to an absolute miminum for a functional Nix devcontainer. This is a starting point for you to build your IDE that handles the hard work of figuring out how to get Nix IDE working in a devcontainer from a system that does not have Nix.
 
