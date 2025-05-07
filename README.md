@@ -49,7 +49,7 @@ This isn't a great user experience and it would be pretty annoying to have to re
 This has similar user experience issues.  It would require either setting up the ~/.vscode-server directory ourselves somehow (and this likely wouldn't work because devcontainers place a mount over that location anyway), or it would require a similar dance as before with the container initially failing, then replace the node binary, then re-connect to the container.
 
 ## The Fix
-We need a way to have VSCode patch the node binary *itself*, after it copies the node binary into the container but before it runs code-server inside it.  And wouldn't you know it, another developer at Microsoft added [functionality for this already!](https://github.com/microsoft/vscode/blob/97e317f161d8aa14057ad348bbc603a6823e4bf1/resources/server/bin/code-server-linux.sh#L12-L20) (They even referenced a NixOS bug report about the ordering of --set-rpath and --set-interpreter! Thanks again deepak1556, this literally wouldn't be possible without this functionality!).
+We need a way to have VSCode patch the node binary *itself*, after it copies the node binary into the container but before it runs code-server inside it.  And wouldn't you know it, that same developer at Microsoft added [functionality for this already!](https://github.com/microsoft/vscode/blob/97e317f161d8aa14057ad348bbc603a6823e4bf1/resources/server/bin/code-server-linux.sh#L12-L20) (They even referenced a NixOS bug report about the ordering of --set-rpath and --set-interpreter! Thanks again deepak1556, this literally wouldn't be possible without this functionality!).
 
 Now we just need to put it all together, it comes down to setting a few environment variables:
 
