@@ -1,10 +1,23 @@
 {
     "nix.enableLanguageServer": true,
-    "nix.serverPath": "/startLSP.sh",
+    // Both nixd and nil work
+    // You need to call the versions inside /root/bin/ to ensure that nix-daemon is also started
+    // Only uncomment one of the below lines
+    // "nix.serverPath": "/root/bin/nil",
+    "nix.serverPath": "/root/bin/nixd",
     "nix.hiddenLanguageServerErrors": [
         "textDocument/definition",
     ],
+    // Both nixfmt and alejandra are pre-installed in the devcontainer.
+    // Adjust the lines below to your preference
     "nix.serverSettings": {
+        "nil": {
+            "formatting": {
+                "command": [
+                    "nixfmt"
+                ]
+            },
+        },
         "nixd": {
             "formatting": {
                 "command": [
