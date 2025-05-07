@@ -10,7 +10,6 @@ It includes the following functionality:
 - A VSCode settings file that has the bare minimum needed to get Nix IDE functional
   - Pre-configured to use nixfmt for code formatting, but alejandra is available in the container if you prefer it
   - Formatting on save is not enabled in the settings.json, so your global preferences should be respected there.  You can uncomment the line in .vscode/settings.json if you want it
-- A wrapper script to run the nixd LSP that ensures that nix-daemon is running (nixd needs nix-daemon for code completion functionality)
 - The container is the official [nixos/nix container](https://hub.docker.com/r/nixos/nix) so you can open a VSCode Terminal and use all of your familiar nix-env, nix-shell, etc commands
   - NOTE: The container is NOT NixOS, it is a minimal container with Nix package management.  You can still use this to develop your NixOS configurations, but don't expect tooling like nixos-rebuild and such, it's a container, not a full operating system.
 
