@@ -5,6 +5,7 @@
     "nix.serverPath": "nixd",
     "nix.hiddenLanguageServerErrors": [
         "textDocument/definition",
+        "textDocument/formatting"
     ],
     // Both nixfmt and alejandra are pre-installed in the devcontainer.
     // Adjust the lines below to your preference
